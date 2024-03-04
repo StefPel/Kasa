@@ -1,0 +1,33 @@
+.tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  
+    @include mobile {
+      margin-top: 10px
+    }
+  
+    .tag {
+      @include verticalCenter;
+      background-color: $color-1;
+      color: $color-2;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 14px;
+      padding: 4px 30px;
+  
+      @include tablet {
+        font-size: 12px;
+        border-radius: 5px;
+        padding: 4px 20px;
+      }
+  
+      @include mobile {
+        font-size: 10px;
+        border-radius: 5px;
+        padding: 4px 15px;
+      }
+    }
+  }
