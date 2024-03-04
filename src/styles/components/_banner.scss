@@ -1,0 +1,103 @@
+.banner {
+    @include verticalCenter;
+    @include margin;
+    height: 223px;
+    max-width: 100%;
+    margin-top: 55px;
+  
+    @include tablet {
+      margin: 35px 50px 0 50px;
+      height: 170px;
+    }
+  
+    @include mobile {
+      margin: 20px 20px 0 20px;
+      height: 111px;
+  
+      &.styleMobile {
+        height: 223px;
+      }
+    }
+  
+    .image-container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+  
+      img {
+        height: 223px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+  
+        @include tablet {
+          height: 170px;
+          width: 100%;
+          border-radius: 15px;
+  
+        }
+  
+        @include mobile {
+          height: 111px;
+          width: 100%;
+          margin: 0;
+          border-radius: 10px;
+  
+          &.styleMobile {
+            height: 223px;
+          }
+        }
+      }
+  
+      .text-overlay {
+        @include verticalCenter;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: $color-2;
+        border-radius: 25px;
+  
+        @include tablet {
+          height: 100%;
+          border-radius: 15px;
+        }
+  
+        @include mobile {
+          border-radius: 10px;
+          justify-content: flex-start;
+          height: 100%;
+        }
+  
+        h2 {
+          text-align: center;
+          margin: 0 15px;
+          font-size: 48px;
+          font-weight: 500;
+          animation: fadeIn 1.5s ease-in-out;
+  
+          @include tablet {
+            font-size: 36px;
+          }
+  
+          @include mobile {
+            font-size: 24px;
+            text-align: left;
+            width: 220px;
+          }
+        }
+  
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+  
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }

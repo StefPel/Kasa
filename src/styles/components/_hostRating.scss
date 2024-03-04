@@ -1,0 +1,98 @@
+.columns_housing {
+    display: flex;
+    justify-content: space-between;
+  
+    @include tablet {
+      align-items: center;
+    }
+  
+    @include mobile {
+      flex-direction: column;
+    }
+  
+    .column2 {
+      margin-top: 24px;
+  
+      @include tablet {
+        margin-top: 15px;
+      }
+  
+      @include mobile {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 15px;
+      }
+  
+      .host {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+  
+        p {
+          text-align: right;
+          width: 90px;
+  
+          @include tablet {
+            font-size: 15px;
+            width: 90px;
+          }
+  
+          @include mobile {
+            font-size: 12px;
+            width: 45px;
+          }
+        }
+  
+        img {
+          width: 64px;
+          height: 64px;
+          border-radius: 64px;
+  
+          @include tablet {
+            width: 48px;
+            height: 48px;
+            border-radius: 48px;
+          }
+  
+          @include mobile {
+            width: 32px;
+            height: 32px;
+            border-radius: 32px;
+          }
+        }
+      }
+  
+      .rating {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+  
+        @include mobile {
+          margin-top: 0;
+        }
+  
+        .fa-star {
+          font-size: 24px;
+          margin-left: 10px;
+  
+          @include tablet {
+            font-size: 18px;
+            margin-left: 5px;
+          }
+  
+          @include mobile {
+            font-size: 15px;
+            margin-left: 0;
+            margin-right: 5px;
+          }
+        }
+  
+        .star-inactive {
+          color: $color-3;
+        }
+      }
+    }
+  }

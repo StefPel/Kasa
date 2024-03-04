@@ -1,0 +1,86 @@
+.navigation {
+    @include margin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 45px;
+  
+    @include tablet {
+      margin: 50px 50px 0 50px;
+    }
+  
+    @include mobile {
+      margin: 20px 20px 0 20px;
+    }
+  
+    img {
+      @include tablet {
+        height: 54px;
+      }
+  
+      @include mobile {
+        height: 46px;
+      }
+    }
+  
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 55px;
+      position: relative;
+  
+      @include tablet {
+        gap: 35px;
+      }
+  
+      @include mobile {
+        gap: 27px;
+      }
+    }
+  
+    li {
+      color: $color-1;
+      font-size: 24px;
+  
+      @include tablet {
+        font-size: 18px;
+      }
+  
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  
+    .nav-active {
+      position: relative;
+  
+      &::after {
+        content: "";
+        height: 4px;
+        width: 0;
+        background: $color-1;
+        position: absolute;
+        border-radius: 10px;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-animation: anim 0.3s ease forwards;
+        animation: anim 0.6s ease forwards;
+  
+        @include mobile {
+          height: 2px;
+        }
+        @-webkit-keyframes anim {
+          to {
+            width: 100%;
+          }
+        }
+    
+        @keyframes anim {
+          to {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }

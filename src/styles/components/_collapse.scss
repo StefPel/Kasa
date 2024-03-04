@@ -1,0 +1,138 @@
+.collapse {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 100%;
+  
+    @include tablet {
+      margin-top: 0;
+    }
+  
+    @include mobile {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  
+    .collapse_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $color-1;
+      color: $color-2;
+      padding: 15px;
+      border-radius: 10px 10px 10px 10px;
+      position: relative;
+      z-index: 2;
+  
+      @include tablet {
+        padding: 12px;
+        border-radius: 5px 5px 5px 5px;
+      }
+  
+      @include mobile {
+        padding: 10px;
+        border-radius: 5px 5px 5px 5px;
+      }
+  
+      h2 {
+        font-weight: 500;
+        font-size: 24px;
+  
+        @include tablet {
+          font-size: 18px;
+        }
+  
+        @include mobile {
+          font-size: 13px;
+        }
+      }
+  
+      .icon_collapse {
+        background: none;
+        border: none;
+  
+        img {
+          width: 32px;
+          height: auto;
+        }
+  
+        &:hover {
+          cursor: pointer;
+        }
+  
+        &.rotate {
+          transition: transform 0.3s ease-in-out;
+          transform: rotate(-180deg);
+        }
+  
+        &.reverse {
+          transition: transform 0.3s ease-in-out;
+          transform: rotate(0);
+        }
+  
+        @include tablet {
+          img {
+            width: 28px;
+            height: auto;
+          }
+        }
+  
+        @include mobile {
+          img {
+            width: 24px;
+            height: auto;
+          }
+        }
+      }
+    }
+  
+    .collapse_content {
+      background-color: $background-1;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease-in;
+  
+      p {
+        padding: 25px 20px 20px 20px;
+  
+        @include tablet {
+          font-size: 15px;
+        }
+  
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+  
+      &.open {
+        margin-top: -10px;
+        max-height: 400px;
+      }
+  
+      &.close {
+        max-height: 0;
+        margin-top: -10px;
+        transition: max-height 0.5s ease-out;
+      }
+  
+      &.column_equipment {
+        ul {
+          padding: 25px 20px 20px 20px;
+          display: block;
+        }
+  
+        li {
+          font-size: 18px;
+  
+          @include tablet {
+            font-size: 15px;
+          }
+  
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }

@@ -1,17 +1,35 @@
 $font-1: 'Montserrat', sans-serif;
-$color-1:#FF6060;
+$color-1: #FF6060;
 $color-2: #fff;
+$color-3: #E3E3E3;
 $background-1: #F6F6F6;
 $background-2: #000;
 
+$breakpoints: (
+  mobile: 768px,
+  tablet: 992px,
+);
+
 @mixin margin {
-  margin: 0 100px 
+  margin: 0 100px
 }
 
 @mixin verticalCenter {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: map-get($breakpoints, mobile) + 1px) and (max-width: map-get($breakpoints, tablet)) {
+    @content;
+  }
 }
 
 *,
@@ -31,5 +49,5 @@ ul {
 body {
   font-family: $font-1;
   color: $color-1;
-  font-size: 24px;
+  font-size: 18px;
 }
